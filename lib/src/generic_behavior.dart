@@ -29,7 +29,7 @@ class GenericBehavior<T> extends BlocBase {
     if (!isClosed) _behaviorSubject.addError(error, stackTrace);
   }
 
-  T? get value => _behaviorSubject.value;
+  T? get value => _behaviorSubject.valueOrNull;
 
   @override
   void dispose() => _behaviorSubject.close();
