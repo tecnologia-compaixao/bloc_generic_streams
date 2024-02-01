@@ -16,7 +16,7 @@ class GenericPublish<T> extends BlocBase {
         return TimerStream<dynamic>(true, const Duration(milliseconds: 1500));
       }).shareValue();
 
-  T? get value => _publishSubject.publishValue().value;
+  T? get value => _publishSubject.publishValue().valueOrNull;
 
   bool get isClosed => _publishSubject.isClosed;
 
